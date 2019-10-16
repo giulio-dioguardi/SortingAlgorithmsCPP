@@ -8,9 +8,9 @@ QuickSortAlgorithm::QuickSortAlgorithm()
 QuickSortAlgorithm::~QuickSortAlgorithm()
 {}
 
-void QuickSortAlgorithm::sort(std::vector<int> *inputarray)
+void QuickSortAlgorithm::sort(std::vector<int> *vec)
 {
-    this->quickSort(inputarray, inputarray->begin(), inputarray->end());
+    this->quickSort(vec, vec->begin(), vec->end());
 }
 
 template<typename Iter>
