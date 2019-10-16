@@ -3,13 +3,13 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
-#include "../SortingAlgorithms/sortingalgorithm.h"
+#include "../SortingAlgorithms/bubblesortalgorithm.h"
 
 using namespace testing;
 
-TEST(SortingAlgorithmTest, SortTestEmptyVector)
+TEST(BubbleSortingAlgorithmTest, SortTestEmptyVector)
 {
-    SortingAlgorithm* algorithm = new SortingAlgorithm();
+    SortingAlgorithm* algorithm = new BubbleSortAlgorithm();
     std::vector<int> array;
     ASSERT_EQ(algorithm->sort(array), std::vector<int>());
 }

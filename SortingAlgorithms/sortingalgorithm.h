@@ -7,8 +7,10 @@ class SortingAlgorithm
 {
 public:
     SortingAlgorithm();
+    virtual ~SortingAlgorithm();
     //template<typename T> T* sort(T* inputarray);
-    std::vector<int> sort(std::vector<int> inputarray);
+    virtual std::vector<int> sort(std::vector<int> inputarray) = 0;
+
 };
 
 #endif // SORTINGALGORITHM_H

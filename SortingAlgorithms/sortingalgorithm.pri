@@ -2,7 +2,9 @@ INCLUDEPATH += $$PWD/
 VPATH += $$PWD/
 
 SOURCES += \
-    SortingAlgorithm.cpp
+    $$PWD/bubblesortalgorithm.cpp \
+    sortingalgorithm.cpp
 
 HEADERS += \
-    SortingAlgorithms.h
+    $$PWD/bubblesortalgorithm.h \
+    sortingalgorithm.h
