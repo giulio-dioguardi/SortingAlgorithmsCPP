@@ -8,7 +8,7 @@ class BubbleSortAlgorithm : public SortingAlgorithm
 public:
     BubbleSortAlgorithm();
     virtual ~BubbleSortAlgorithm() override;
-    std::vector<int> sort(std::vector<int> inputarray) override;
+    virtual void sort(std::vector<int>* vec) override;
 };
 
 #endif // BUBBLESORTALGORIGHM_H

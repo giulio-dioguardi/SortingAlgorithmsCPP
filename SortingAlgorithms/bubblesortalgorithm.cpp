@@ -9,7 +9,21 @@ BubbleSortAlgorithm::~BubbleSortAlgorithm()
 {}
 
 //template <typename T> T* SortingAlgorithm::sort(T* inputarray)
-std::vector<int> BubbleSortAlgorithm::sort(std::vector<int> inputarray)
+void BubbleSortAlgorithm::sort(std::vector<int>* vec)
 {
-    return std::vector<int>();
+    if (vec->size() < 2)
+    {
+        return;
+    }
+
+    for (size_t i = 0; i < vec->size(); i++)
+    {
+        for (size_t j = i; j < vec->size(); j++)
+        {
+            if (vec->at(i) > vec->at(j))
+            {
+                std::swap(vec->at(i), vec->at(j));
+            }
+        }
+    }
 }
