@@ -117,9 +117,9 @@ SPEED_TEST(BubbleSortAlgorithmTest, 200);
 EMPTY_VECTOR(QuickSortAlgorithmTest);
 ONE_ENTRY(QuickSortAlgorithmTest);
 TWO_OUT_ORDER(QuickSortAlgorithmTest);
-//TWO_IN_ORDER(QuickSortAlgorithmTest);
-//THREE_OUT_ORDER(QuickSortAlgorithmTest);
-//SAME_ELEMENTS(QuickSortAlgorithmTest);
-//SPEED_TEST(QuickSortAlgorithmTest, 20000);
+TWO_IN_ORDER(QuickSortAlgorithmTest);
+THREE_OUT_ORDER(QuickSortAlgorithmTest);
+SAME_ELEMENTS(QuickSortAlgorithmTest);
+SPEED_TEST(QuickSortAlgorithmTest, 2000000);
 
 #endif // TST_SORTTEST_H
