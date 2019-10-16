@@ -9,7 +9,14 @@ BubbleSortAlgorithm::~BubbleSortAlgorithm()
 {}
 
 //template <typename T> T* SortingAlgorithm::sort(T* inputarray)
-std::vector<int> BubbleSortAlgorithm::sort(std::vector<int> inputarray)
+void BubbleSortAlgorithm::sort(std::vector<int>* inputarray)
 {
-    return inputarray;
+    if (inputarray->size() == 1)
+    {
+        return;
+    }
+    else if (inputarray->size() == 2)
+    {
+        std::iter_swap(inputarray->begin(), inputarray->begin() + 1);
+    }
 }

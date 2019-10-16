@@ -11,24 +11,41 @@ class BubbleSortAlgorithmTest : public Test
 {
 public:
     BubbleSortAlgorithmTest() {}
+    SortingAlgorithm* algorithm;
+    void SetUp() override
+    {
+        this->algorithm = new BubbleSortAlgorithm();
+    }
+
+    void TearDown() override
+    {
+        delete(this->algorithm);
+    }
 };
 
 
 TEST_F(BubbleSortAlgorithmTest, emptyVector)
 {
-    BubbleSortAlgorithm* algorithm = new BubbleSortAlgorithm();
     std::vector<int> array;
-    ASSERT_EQ(algorithm->sort(array), std::vector<int>());
+    algorithm->sort(&array);
+    ASSERT_EQ(array, std::vector<int>());
 }
 
 TEST_F(BubbleSortAlgorithmTest, vectorWithOneEntry)
 {
-    BubbleSortAlgorithm* algorithm = new BubbleSortAlgorithm();
     std::vector<int> vectorInput = { 1 };
     std::vector<int> vectorExpected = { 1 };
-    ASSERT_EQ(algorithm->sort(vectorInput), vectorExpected);
+    algorithm->sort(&vectorInput);
+    ASSERT_EQ(vectorInput, vectorExpected);
 }
 
+TEST_F(BubbleSortAlgorithmTest, vectorWithTwoEntriesOutOfOrder)
+{
+    std::vector<int> vectorInput = { 2, 1 };
+    std::vector<int> vectorExpected = { 1 , 2 };
+    algorithm->sort(&vectorInput);
+    ASSERT_EQ(vectorInput, vectorExpected);
+}
 
 
 #endif // TST_SORTTEST_H

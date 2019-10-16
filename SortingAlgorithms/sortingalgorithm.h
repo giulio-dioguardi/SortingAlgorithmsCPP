@@ -9,7 +9,7 @@ public:
     SortingAlgorithm();
     virtual ~SortingAlgorithm();
     //template<typename T> T* sort(T* inputarray);
-    virtual std::vector<int> sort(std::vector<int> inputarray) = 0;
+    virtual void sort(std::vector<int>* inputarray) = 0;
 
 };
 
