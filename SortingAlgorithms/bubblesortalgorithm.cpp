@@ -16,8 +16,14 @@ void BubbleSortAlgorithm::sort(std::vector<int>* inputarray)
         return;
     }
 
-    if (inputarray->size() == 2)
+    for (size_t i = 0; i < inputarray->size(); i++)
     {
-        std::iter_swap(inputarray->begin(), inputarray->begin() + 1);
+        for (size_t j = i; j < inputarray->size(); j++)
+        {
+            if (inputarray->at(i) > inputarray->at(j))
+            {
+                std::swap(inputarray->at(i), inputarray->at(j));
+            }
+        }
     }
 }
