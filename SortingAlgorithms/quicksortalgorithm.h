@@ -9,6 +9,8 @@ public:
     QuickSortAlgorithm();
     virtual ~QuickSortAlgorithm() override;
     virtual void sort(std::vector<int>* inputarray) override;
+    template<typename Iter>
+    void quickSort(std::vector<int>*, Iter left, Iter right);
 };
 
 #endif // QUICKSORTALGORITHM_H
