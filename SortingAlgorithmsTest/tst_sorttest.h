@@ -7,11 +7,11 @@
 
 using namespace testing;
 
-TEST(SortingAlgorithmTest, SortTestNullPtr)
+TEST(SortingAlgorithmTest, SortTestEmptyVector)
 {
     SortingAlgorithm* algorithm = new SortingAlgorithm();
-    int array[1];
-    ASSERT_EQ(algorithm->sort(array), nullptr);
+    std::vector<int> array;
+    ASSERT_EQ(algorithm->sort(array), std::vector<int>());
 }
 
 #endif // TST_SORTTEST_H
