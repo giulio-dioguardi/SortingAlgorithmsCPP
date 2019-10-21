@@ -13,8 +13,18 @@ void QuickSortAlgorithm::sort(std::vector<int> *vec)
     this->quickSort(*vec, vec->begin(), vec->end());
 }
 
-template<typename Iter>
-void QuickSortAlgorithm::quickSort(std::vector<int> & vec,  Iter left, Iter right)
+void QuickSortAlgorithm::sort(std::vector<double> *vec)
+{
+    this->quickSort(*vec, vec->begin(), vec->end());
+}
+
+std::string QuickSortAlgorithm::toString()
+{
+    return "Quick Sort";
+}
+
+template <typename T, typename Iter>
+void QuickSortAlgorithm::quickSort(std::vector<T> & vec,  Iter left, Iter right)
 {
     auto size = std::distance(left, right);
     if (size <= 1)

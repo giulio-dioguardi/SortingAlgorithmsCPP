@@ -63,6 +63,17 @@ using namespace testing;
     ASSERT_TRUE(std::is_sorted(vectorInput.begin(), vectorInput.end())); \
 }
 
+#define SPEED_TEST_DOUBLE(fixture, testSize) TEST_F(fixture, speedTestDouble) \
+{ \
+    std::vector<double> vectorInput = {}; \
+    size_t size = testSize; \
+    for (size_t i = 0 ; i < size; i++) \
+    { \
+        vectorInput.push_back(rand() % size); \
+    } \
+    algorithm->sort(&vectorInput); \
+    ASSERT_TRUE(std::is_sorted(vectorInput.begin(), vectorInput.end())); \
+}
 
 class SortAlgorithmTest : public Test
 {
@@ -113,6 +124,7 @@ TWO_IN_ORDER(BubbleSortAlgorithmTest);
 THREE_OUT_ORDER(BubbleSortAlgorithmTest);
 SAME_ELEMENTS(BubbleSortAlgorithmTest);
 SPEED_TEST(BubbleSortAlgorithmTest, 200);
+SPEED_TEST_DOUBLE(BubbleSortAlgorithmTest, 200);
 
 EMPTY_VECTOR(QuickSortAlgorithmTest);
 ONE_ENTRY(QuickSortAlgorithmTest);
@@ -121,5 +133,6 @@ TWO_IN_ORDER(QuickSortAlgorithmTest);
 THREE_OUT_ORDER(QuickSortAlgorithmTest);
 SAME_ELEMENTS(QuickSortAlgorithmTest);
 SPEED_TEST(QuickSortAlgorithmTest, 2000000);
+SPEED_TEST_DOUBLE(QuickSortAlgorithmTest, 200000);
 
 #endif // TST_SORTTEST_H

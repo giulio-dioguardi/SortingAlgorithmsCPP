@@ -8,8 +8,23 @@ BubbleSortAlgorithm::BubbleSortAlgorithm()
 BubbleSortAlgorithm::~BubbleSortAlgorithm()
 {}
 
-//template <typename T> T* SortingAlgorithm::sort(T* inputarray)
-void BubbleSortAlgorithm::sort(std::vector<int>* vec)
+std::string BubbleSortAlgorithm::toString()
+{
+    return "Bubble Sort";
+}
+
+void BubbleSortAlgorithm::sort(std::vector<int> *vec)
+{
+    this->bubbleSort(vec);
+}
+
+void BubbleSortAlgorithm::sort(std::vector<double> *vec)
+{
+    this->bubbleSort(vec);
+}
+
+template <typename T>
+void BubbleSortAlgorithm::bubbleSort(std::vector<T>* vec)
 {
     if (vec->size() < 2)
     {
