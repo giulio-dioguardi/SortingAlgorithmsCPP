@@ -5,6 +5,7 @@
 #include <gmock/gmock-matchers.h>
 #include "../SortingAlgorithms/bubblesortalgorithm.h"
 #include "../SortingAlgorithms/quicksortalgorithm.h"
+#include "../SortingAlgorithms/radixsortlsdalgorithm.h"
 #include <stdlib.h>
 
 using namespace testing;
@@ -117,6 +118,14 @@ class QuickSortAlgorithmTest : public SortAlgorithmTest
     }
 };
 
+class RadixSortLSDAlgorithmTest : public SortAlgorithmTest
+{
+    void SetUp() override
+    {
+        algorithm = new RadixSortLSDAlgorithm();
+    }
+};
+
 EMPTY_VECTOR(BubbleSortAlgorithmTest);
 ONE_ENTRY(BubbleSortAlgorithmTest);
 TWO_OUT_ORDER(BubbleSortAlgorithmTest);
@@ -134,5 +143,14 @@ THREE_OUT_ORDER(QuickSortAlgorithmTest);
 SAME_ELEMENTS(QuickSortAlgorithmTest);
 SPEED_TEST(QuickSortAlgorithmTest, 2000000);
 SPEED_TEST_DOUBLE(QuickSortAlgorithmTest, 200000);
+
+EMPTY_VECTOR(RadixSortLSDAlgorithmTest);
+ONE_ENTRY(RadixSortLSDAlgorithmTest);
+TWO_OUT_ORDER(RadixSortLSDAlgorithmTest);
+TWO_IN_ORDER(RadixSortLSDAlgorithmTest);
+THREE_OUT_ORDER(RadixSortLSDAlgorithmTest);
+SAME_ELEMENTS(RadixSortLSDAlgorithmTest);
+SPEED_TEST(RadixSortLSDAlgorithmTest, 200000);
+//SPEED_TEST_DOUBLE(RadixSortLSDAlgorithmTest, 200000);
 
 #endif // TST_SORTTEST_H
